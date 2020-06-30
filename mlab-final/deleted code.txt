@@ -1,0 +1,46 @@
+welcome page:
+style="background-color:#70a1ff"
+
+
+$elements = array(); 
+    $indices = array(); 
+    $temp = array(); 
+    $j = 0; $ind = 0; $start; $end; 
+    for ($i = 0; $i < $n; $i += 3) 
+    { 
+  
+        // Storing element 
+        $elements[$ind] = $arr[$i]; 
+  
+        // Storing the index 
+        $indices[$ind] = $i; 
+        $ind++; 
+    } 
+      
+    if ($k < $elements[0])  
+    { 
+        echo "Not found"; 
+  
+    } 
+    else 
+    { 
+        for ($i = 1; $i <=$ind; $i++) 
+            if ($k < $elements[$i]) 
+            { 
+                $start = $indices[$i - 1]; 
+                $end = $indices[$i]; 
+                break; 
+            } 
+    } 
+    for ($i = $start; $i <=$end; $i++)  
+    { 
+        if ($k == $arr[$i])  
+        { 
+            $j = 1; 
+            break; 
+        } 
+    } 
+    if ($j == 1) 
+        echo "Found at index ", $i; 
+    else
+        echo "Not found"; 
